@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Экомарафон 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+body{
+    background:#f6fbf6;
+    color:#1f2937;
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* HEADER */
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(12px);
+    background:rgba(255,255,255,.85);
+    box-shadow:0 4px 20px rgba(0,0,0,.05);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    color:#16a34a;
+}
+
+.menu{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#374151;
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#16a34a;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(22,163,74,.75),rgba(22,163,74,.75)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+    text-align:center;
+}
+
+.hero-content{
+    width:100%;
+}
+
+.hero h1{
+    font-size:64px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 40px;
+    background:white;
+    color:#16a34a;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+}
+
+/* STATS */
+
+.stats{
+    padding:90px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.card h2{
+    color:#16a34a;
+    font-size:42px;
+}
+
+.card p{
+    color:#6b7280;
+    margin-top:10px;
+}
+
+/* PROGRAM */
+
+.program{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:60px;
+}
+
+.program-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.program-item{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.program-item span{
+    color:#16a34a;
+    font-weight:700;
+}
+
+.program-item h3{
+    margin:15px 0;
+}
+
+/* FEATURES */
+
+.features{
+    padding:100px 0;
+    background:white;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.feature{
+    text-align:center;
+    padding:40px 30px;
+}
+
+.feature .icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+/* CTA */
+
+.cta{
+    padding:100px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:white;
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+form{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+input{
+    padding:18px 20px;
+    border:none;
+    border-radius:50px;
+    min-width:280px;
+    outline:none;
+}
+
+button{
+    border:none;
+    padding:18px 35px;
+    border-radius:50px;
+    background:#111827;
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-4px);
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 20px;
+    text-align:center;
+    color:#6b7280;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:992px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .stats-grid,
+    .program-grid,
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:768px){
+
+    nav{
+flex-direction:column;
+        gap:20px;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:20px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .stats-grid,
+    .program-grid,
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .cta h2{
+        font-size:32px;
+    }
+
+    input{
+        width:100%;
+    }
+
+    button{
+        width:100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="logo">🌿 Экомарафон</div>
+
+            <ul class="menu">
+                <li><a href="#program">Программа</a></li>
+                <li><a href="#features">Почему мы</a></li>
+                <li><a href="#register">Регистрация</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>ЭКОМАРАФОН 2026</h1>
+
+        <p>
+            Беги ради будущего планеты. Присоединяйся к крупнейшему
+            экологическому событию года и внеси свой вклад
+            в сохранение природы.
+        </p>
+
+        <a href="#register" class="btn">
+            Принять участие
+        </a>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="card">
+                <h2>5000+</h2>
+                <p>участников</p>
+            </div>
+
+            <div class="card">
+                <h2>20 км</h2>
+                <p>маршрут марафона</p>
+            </div>
+
+            <div class="card">
+                <h2>3000</h2>
+                <p>высаженных деревьев</p>
+            </div>
+
+            <div class="card">
+                <h2>15</h2>
+                <p>эко-партнёров</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="program" id="program">
+    <div class="container">
+
+        <h2 class="section-title">
+            Программа мероприятия
+        </h2>
+
+        <div class="program-grid">
+
+            <div class="program-item">
+                <span>08:00</span>
+                <h3>Регистрация</h3>
+                <p>
+                    Получение стартовых пакетов и знакомство участников.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <span>10:00</span>
+                <h3>Старт марафона</h3>
+                <p>
+                    Забег по живописному экологическому маршруту.
+                </p>
+            </div>
+
+            <div class="program-item">
+                <span>14:00</span>
+                <h3>Эко-фестиваль</h3>
+                <p>
+                    Мастер-классы, лекции и посадка деревьев.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="features" id="features">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Почему стоит участвовать?
+        </h2>
+
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="icon">🌍</div>
+
+                <h3>Забота о природе</h3>
+
+                <p>
+                    Средства направляются на экологические проекты.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🏃</div>
+
+                <h3>Активный образ жизни</h3>
+
+                <p>
+                    Спорт объединяет людей и делает мир лучше.
+                </p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🤝</div>
+
+                <h3>Новое сообщество</h3>
+
+                <p>
+                    Знакомства, общение и единомышленники.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta" id="register">
+
+    <h2>Стань частью перемен</h2>
+
+    <p>
+        Зарегистрируйся прямо сейчас и получи стартовый пакет участника.
+    </p>
+
+    <form>
+        <input type="text" placeholder="Ваше имя">
+
+        <input type="email" placeholder="E-mail">
+<button type="submit">
+            Зарегистрироваться
+        </button>
+    </form>
+
+</section>
+
+<footer>
+    © 2026 Экомарафон. Вместе сохраним планету 🌱
+</footer>
+
+</body>
+</html>
